@@ -19524,48 +19524,6 @@ cc_prebuilt_library_shared {
 
 
 cc_prebuilt_library_shared {
-    name: "libvibrator",
-    owner: "ssh",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libvibrator.so",
-            ],
-            shared_libs: [
-                "libbinder",
-                "liblog",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libvibrator.so",
-            ],
-            shared_libs: [
-                "libbinder",
-                "liblog",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-
-cc_prebuilt_library_shared {
     name: "libvow_ap_test_aa",
     owner: "ssh",
     strip: {
@@ -25439,6 +25397,7 @@ cc_prebuilt_library_shared {
                 "libSQLiteModule_VER_ALL",
                 "libm",
                 "libc",
+                "liblog",
             ],
         },
     },
@@ -34831,15 +34790,6 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "gnss-default.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/gnss-default.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "gnss@2.1-service.xml",
     owner: "ssh",
     src: "proprietary/vendor/etc/vintf/manifest/gnss@2.1-service.xml",
@@ -35636,35 +35586,6 @@ cc_prebuilt_binary {
             ],
             shared_libs: [
                 "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "dumpsys",
-    owner: "ssh",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/dumpsys",
-            ],
-            shared_libs: [
-                "libbase",
-                "libutils",
-                "liblog",
-                "libbinder",
-                "libbinderdebug",
                 "libc++",
                 "libc",
                 "libm",
