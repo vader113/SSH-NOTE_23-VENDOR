@@ -2805,6 +2805,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.pq@2.15-impl",
     owner: "ssh",
+    allow_undefined_symbols: true,
     strip: {
         none: true,
     },
@@ -2864,7 +2865,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so",
             ],
             shared_libs: [
-                "libshim_sensors",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -2873,7 +2873,7 @@ cc_prebuilt_library_shared {
                 "android.hardware.sensors@1.0",
                 "libsensorndkbridge",
                 "liblog",
-                "libutils-v32",
+                "libutils",
                 "libcutils",
                 "libpq_prot",
                 "libhidlmemory",
@@ -15581,6 +15581,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libminiui",
     owner: "ssh",
+    allow_undefined_symbols: true,
     strip: {
         none: true,
     },
@@ -17467,6 +17468,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libneuralnetworks_sl_driver_mtk_prebuilt",
     owner: "ssh",
+    allow_undefined_symbols: true,
     strip: {
         none: true,
     },
@@ -17811,6 +17813,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libnvram",
     owner: "ssh",
+    allow_undefined_symbols: true,
     strip: {
         none: true,
     },
@@ -19168,6 +19171,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libsysenv",
     owner: "ssh",
+    allow_undefined_symbols: true,
     strip: {
         none: true,
     },
@@ -19290,6 +19294,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libthha",
     owner: "ssh",
+    allow_undefined_symbols: true,
     strip: {
         none: true,
     },
@@ -19370,6 +19375,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libvcodec_oal",
     owner: "ssh",
+    allow_undefined_symbols: true,
     strip: {
         none: true,
     },
@@ -24622,6 +24628,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "hwcomposer.mtk_common",
     owner: "ssh",
+    allow_undefined_symbols: true,
     strip: {
         none: true,
     },
@@ -24631,7 +24638,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/hwcomposer.mtk_common.so",
             ],
             shared_libs: [
-                "libprocessgroup_shim",
                 "libutils",
                 "libcutils",
                 "liblog",
@@ -24765,6 +24771,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "android.hardware.camera.provider@2.6-impl-mediatek",
     owner: "ssh",
+    check_elf_files: false,
     strip: {
         none: true,
     },
@@ -24776,7 +24783,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libmtkcam_device3_hidl",
                 "liblog",
-                "libutils-v32",
+                "libutils",
                 "libcutils",
                 "libladder",
                 "libhardware",
@@ -25106,6 +25113,7 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libdl",
                 "libc",
+                "liblog",
             ],
         },
     },
@@ -25536,6 +25544,7 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libdl",
                 "libc",
+                "liblog",
             ],
         },
     },
@@ -25560,6 +25569,7 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libdl",
                 "libc",
+                "liblog",
             ],
         },
     },
@@ -29700,7 +29710,6 @@ cc_prebuilt_library_shared {
                 "android.hardware.security.keymint-V1-ndk_platform",
                 "android.hardware.security.secureclock-V1-ndk_platform",
                 "android.hardware.security.sharedsecret-V1-ndk_platform",
-                "lib_android_keymaster_keymint_utils",
                 "libbase",
                 "libbinder_ndk",
                 "libcppbor_external",
@@ -29727,6 +29736,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libkeystore-engine-wifi-hidl",
     owner: "ssh",
+    allow_undefined_symbols: true,
     strip: {
         none: true,
     },
@@ -29899,6 +29909,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libmnl",
     owner: "ssh",
+    allow_undefined_symbols: true,
     strip: {
         none: true,
     },
@@ -34700,33 +34711,6 @@ android_app_import {
 }
 
 prebuilt_etc_xml {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "android.hardware.boot@1.2.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.boot@1.2.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "android.hardware.health@2.1.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.health@2.1.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "android.hardware.neuralnetworks-shim-service-mtk.xml",
     owner: "ssh",
     src: "proprietary/vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml",
@@ -34762,68 +34746,6 @@ prebuilt_etc_xml {
     soc_specific: true,
 }
 
-prebuilt_etc_xml {
-    name: "android.hardware.usb@1.2-service-mediatekv2.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "android.hardware.wifi@1.0-service.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "face-jdm.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/face-jdm.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "gnss@2.1-service.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/gnss@2.1-service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "lbs_hidl_service@1.0.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "lights-mtk-default.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/lights-mtk-default.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "manifest_android.hardware.drm@1.4-service.clearkey.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.clearkey.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
 
 prebuilt_etc_xml {
     name: "manifest_android.hardware.drm@1.4-service.widevine.xml",
@@ -34871,45 +34793,9 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "manifest_hwcomposer.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/manifest_hwcomposer.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "manifest_media_c2_V1_2_default.xml",
     owner: "ssh",
     src: "proprietary/vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "memtrack-mediatek.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/memtrack-mediatek.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "power-default.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/power-default.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "vibrator-mtk-default.xml",
-    owner: "ssh",
-    src: "proprietary/vendor/etc/vintf/manifest/vibrator-mtk-default.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -34951,6 +34837,7 @@ cc_prebuilt_binary {
 cc_prebuilt_binary {
     name: "aee_aedv64_v2",
     owner: "ssh",
+    allow_undefined_symbols: true,
     target: {
         android_arm64: {
             srcs: [
@@ -36195,6 +36082,8 @@ cc_prebuilt_binary {
 cc_prebuilt_binary {
     name: "android.hardware.gnss-service.mediatek",
     owner: "ssh",
+    check_elf_files: false,
+    allow_undefined_symbols: true,
     target: {
         android_arm64: {
             srcs: [
@@ -36215,7 +36104,6 @@ cc_prebuilt_binary {
                 "android.hardware.gnss.measurement_corrections@1.0",
                 "android.hardware.gnss.visibility_control@1.0",
                 "android.hardware.gnss-V1-ndk_platform",
-                "android.hardware.gnss-impl-mediatek",
                 "libc++",
                 "libc",
                 "libm",
@@ -36417,6 +36305,8 @@ cc_prebuilt_binary {
 cc_prebuilt_binary {
     name: "android.hardware.lights-service.mediatek",
     owner: "ssh",
+    check_elf_files: false,
+    allow_undefined_symbols: true,
     target: {
         android_arm64: {
             srcs: [
@@ -36449,6 +36339,8 @@ cc_prebuilt_binary {
 cc_prebuilt_binary {
     name: "android.hardware.media.c2@1.2-mediatek",
     owner: "ssh",
+    check_elf_files: false,
+    allow_undefined_symbols: true,
     target: {
         android_arm: {
             srcs: [
@@ -36570,6 +36462,8 @@ cc_prebuilt_binary {
 cc_prebuilt_binary {
     name: "android.hardware.memtrack-service.mediatek",
     owner: "ssh",
+    check_elf_files: false,
+    allow_undefined_symbols: true,
     target: {
         android_arm64: {
             srcs: [
@@ -36674,6 +36568,8 @@ cc_prebuilt_binary {
 cc_prebuilt_binary {
     name: "android.hardware.security.keymint@1.0-service.beanpod",
     owner: "ssh",
+    check_elf_files: false,
+    allow_undefined_symbols: true,
     target: {
         android_arm64: {
             srcs: [
@@ -37064,8 +36960,8 @@ cc_prebuilt_binary {
                 "libhidlbase",
                 "libutils",
                 "liblog",
-                "android.hardware.biometrics.face-V1-ndk_platform",
-                "android.hardware.biometrics.common-V1-ndk_platform",
+                "android.hardware.biometrics.face-V1-ndk",
+                "android.hardware.biometrics.common-V1-ndk",
                 "android.hardware.common-V2-ndk_platform",
                 "android.hardware.keymaster-V3-ndk_platform",
                 "libcamera2ndk_vendor",
